@@ -1,6 +1,8 @@
 package com.personal;
 
 import com.personal.discount.DiscountCalculator;
+import com.personal.order.GenerateOrder;
+import com.personal.order.GenerateOrderHandler;
 import com.personal.order.Order;
 import com.personal.quote.Quote;
 import com.personal.tax.ICMS;
@@ -39,11 +41,13 @@ public class Main {
 
     @Test
     public void order() {
-        Quote quote = new Quote(new BigDecimal("600"), 4);
         String customer = "Guilherme";
-        LocalDateTime date = LocalDateTime.now();
+        BigDecimal value =  new BigDecimal("300");
+        int itemsQuantity = 3;
 
-        Order order = new Order(customer, date, quote);
+        GenerateOrder generateOrder = new GenerateOrder(customer, value, itemsQuantity);
+        GenerateOrderHandler handler = new GenerateOrderHandler();
 
+        handler.perform(generateOrder);
     }
 }
