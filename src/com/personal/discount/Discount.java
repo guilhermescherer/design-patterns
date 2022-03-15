@@ -4,6 +4,7 @@ import com.personal.quote.Quote;
 
 import java.math.BigDecimal;
 
+// Chain of Responsibility Pattern
 public abstract class Discount {
 
     protected Discount next;
@@ -16,6 +17,7 @@ public abstract class Discount {
         return next;
     }
 
+    // Template method Pattern
     public BigDecimal calculate(Quote quote) {
         if(mustBeApplied(quote)) {
             return perform(quote);

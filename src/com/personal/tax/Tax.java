@@ -7,5 +7,4 @@ import java.math.BigDecimal;
 public interface Tax {
 
     BigDecimal calculate(Quote quote);
-
 }
