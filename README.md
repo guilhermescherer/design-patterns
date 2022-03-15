@@ -1,6 +1,8 @@
-# Projeto com vários design patterns para fim didático
+# Design Patterns
 
-## Utilizados até o momento:
+Projeto com vários design patterns para fim didático
+
+#### Utilizados até o momento:
 
 * Strategy
 * Chain of Responsibility
