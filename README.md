@@ -8,3 +8,4 @@ Projeto com vários design patterns para fim didático
 * Chain of Responsibility
 * Template Method
 * State
+* Command
