@@ -1,5 +1,6 @@
 package com.personal;
 
+import com.personal.action.SendEmailOrder;
 import com.personal.discount.DiscountCalculator;
 import com.personal.order.GenerateOrder;
 import com.personal.order.GenerateOrderHandler;
@@ -12,6 +13,8 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -46,7 +49,7 @@ public class Main {
         int itemsQuantity = 3;
 
         GenerateOrder generateOrder = new GenerateOrder(customer, value, itemsQuantity);
-        GenerateOrderHandler handler = new GenerateOrderHandler();
+        GenerateOrderHandler handler = new GenerateOrderHandler(List.of(new SendEmailOrder(), new SendEmailOrder()));
 
         handler.perform(generateOrder);
     }
