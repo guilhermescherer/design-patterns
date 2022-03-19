@@ -4,7 +4,6 @@ import com.personal.action.SendEmailOrder;
 import com.personal.discount.DiscountCalculator;
 import com.personal.order.GenerateOrder;
 import com.personal.order.GenerateOrderHandler;
-import com.personal.order.Order;
 import com.personal.quote.Quote;
 import com.personal.tax.ICMS;
 import com.personal.tax.ISS;
@@ -12,8 +11,6 @@ import com.personal.tax.TaxCalculator;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;

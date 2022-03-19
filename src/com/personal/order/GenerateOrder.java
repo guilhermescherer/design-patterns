@@ -1,9 +1,6 @@
 package com.personal.order;
 
-import com.personal.quote.Quote;
-
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 public class GenerateOrder {
 
