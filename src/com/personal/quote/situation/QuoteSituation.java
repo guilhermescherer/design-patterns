@@ -1,6 +1,7 @@
-package com.personal.quote;
+package com.personal.quote.situation;
 
 import com.personal.exception.QuoteSituationException;
+import com.personal.quote.Quote;
 
 import java.math.BigDecimal;
 

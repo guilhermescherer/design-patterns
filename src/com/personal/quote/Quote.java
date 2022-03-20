@@ -1,6 +1,8 @@
 package com.personal.quote;
 
+import com.personal.quote.situation.Finished;
 import com.personal.quote.situation.Processing;
+import com.personal.quote.situation.QuoteSituation;
 
 import java.math.BigDecimal;
 
@@ -47,5 +49,9 @@ public class Quote {
 
     public void setSituation(QuoteSituation situation) {
         this.situation = situation;
+    }
+
+    public boolean isFinished() {
+        return situation instanceof Finished;
     }
 }
