@@ -1,11 +1,13 @@
 # Design Patterns
 
-Projeto com vários design patterns para fim didático
+Projeto com vários design patterns para fim didático.
 
-#### Utilizados até o momento:
-
+#### Comportamentais:
 * Strategy
 * Chain of Responsibility
 * Template Method
 * State
 * Command
+
+#### Estruturais:
+* Adapter
