@@ -1,6 +1,6 @@
 # Design Patterns
 
-Projeto com vários design patterns para fim didático.
+Projeto com alguns design patterns para fim didático.
 
 #### Comportamentais:
 * Strategy
