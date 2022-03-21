@@ -22,11 +22,9 @@ public class Main {
         Quote quote = new Quote(new BigDecimal("100"), 1);
         TaxCalculator tax = new TaxCalculator();
 
-        final BigDecimal icms = tax.calculate(quote, new ICMS());
-        final BigDecimal iss = tax.calculate(quote, new ISS());
+        final BigDecimal icmsWithIss = tax.calculate(quote, new ICMS(new ISS(null)));
 
-        assertEquals(10, icms.intValue());
-        assertEquals(6, iss.intValue());
+        assertEquals(16, icmsWithIss.intValue());
     }
 
     @Test
