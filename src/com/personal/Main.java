@@ -8,6 +8,7 @@ import com.personal.order.GenerateOrder;
 import com.personal.order.GenerateOrderHandler;
 import com.personal.quote.Quote;
 import com.personal.quote.QuoteItem;
+import com.personal.quote.QuoteProxy;
 import com.personal.tax.ICMS;
 import com.personal.tax.ISS;
 import com.personal.tax.TaxCalculator;
@@ -70,6 +71,9 @@ public class Main {
         newQuote.addItem(new QuoteItem(new BigDecimal("500")));
         newQuote.addItem(oldQuote);
 
-        System.out.println(newQuote.getValue());
+        QuoteProxy quoteProxy = new QuoteProxy(newQuote);
+
+        System.out.println(quoteProxy.getValue());
+        System.out.println(quoteProxy.getValue());
     }
 }
