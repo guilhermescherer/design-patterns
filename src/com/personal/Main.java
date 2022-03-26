@@ -1,5 +1,7 @@
 package com.personal;
 
+import com.personal.action.OrderLog;
+import com.personal.action.SaveOrderInDatabase;
 import com.personal.action.SendEmailOrder;
 import com.personal.discount.DiscountCalculator;
 import com.personal.order.GenerateOrder;
@@ -49,7 +51,11 @@ public class Main {
         String customer = "Guilherme";
 
         GenerateOrder generateOrder = new GenerateOrder(customer, List.of(item));
-        GenerateOrderHandler handler = new GenerateOrderHandler(List.of(new SendEmailOrder(), new SendEmailOrder()));
+        GenerateOrderHandler handler = new GenerateOrderHandler(
+                List.of(new SendEmailOrder(),
+                        new SaveOrderInDatabase(),
+                        new OrderLog()
+                ));
 
         handler.perform(generateOrder);
     }
