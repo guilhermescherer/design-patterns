@@ -11,3 +11,7 @@ Projeto com alguns design patterns para fim didático.
 
 #### Estruturais:
 * Adapter
+* Decorator
+* Composite
+* Facade
+* Cache proxy
