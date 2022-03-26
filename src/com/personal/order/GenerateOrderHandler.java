@@ -17,7 +17,9 @@ public class GenerateOrderHandler {
     }
 
     public void perform(GenerateOrder data) {
-        Quote quote = new Quote(data.getQuoteValue(), data.getItemsQuantity());
+        Quote quote = new Quote();
+        quote.addItem(data.getItem());
+
         Order order = new Order(data.getCustomer(), LocalDateTime.now(), quote);
 
         SendEmailOrder sendEmailOrder = new SendEmailOrder();

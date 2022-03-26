@@ -5,16 +5,17 @@ import com.personal.quote.situation.Processing;
 import com.personal.quote.situation.QuoteSituation;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Quote {
+public class Quote implements Budgetable {
 
     private BigDecimal value;
-    private int itemsQuantity;
     private QuoteSituation situation;
+    private List<Budgetable> items;
 
-    public Quote(BigDecimal value, int itemsQuantity) {
-        this.value = value;
-        this.itemsQuantity = itemsQuantity;
+    public Quote() {
+        this.items = new ArrayList<>();
         this.situation = new Processing();
     }
 
@@ -40,7 +41,12 @@ public class Quote {
     }
 
     public int getItemsQuantity() {
-        return itemsQuantity;
+        return items.size();
+    }
+
+    public void addItem(Budgetable item) {
+        this.value = this.value.add(item.getValue());
+        this.items.add(item);
     }
 
     public QuoteSituation getSituation() {

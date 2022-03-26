@@ -5,6 +5,7 @@ import com.personal.discount.DiscountCalculator;
 import com.personal.order.GenerateOrder;
 import com.personal.order.GenerateOrderHandler;
 import com.personal.quote.Quote;
+import com.personal.quote.QuoteItem;
 import com.personal.tax.ICMS;
 import com.personal.tax.ISS;
 import com.personal.tax.TaxCalculator;
@@ -19,7 +20,10 @@ public class Main {
 
     @Test
     public void quoteWithTax() {
-        Quote quote = new Quote(new BigDecimal("100"), 1);
+        QuoteItem item = new QuoteItem(new BigDecimal("100"));
+        Quote quote = new Quote();
+        quote.addItem(item);
+
         TaxCalculator tax = new TaxCalculator();
 
         final BigDecimal icmsWithIss = tax.calculate(quote, new ICMS(new ISS(null)));
@@ -29,7 +33,9 @@ public class Main {
 
     @Test
     public void quoteWithDiscount() {
-        Quote quote = new Quote(new BigDecimal("300"), 6);
+        QuoteItem item = new QuoteItem(new BigDecimal("100"));
+        Quote quote = new Quote();
+        quote.addItem(item);
 
         DiscountCalculator discountCalculator = new DiscountCalculator();
         final BigDecimal discount = discountCalculator.calculate(quote);
@@ -39,13 +45,25 @@ public class Main {
 
     @Test
     public void order() {
+        QuoteItem item = new QuoteItem(new BigDecimal("300"));
         String customer = "Guilherme";
-        BigDecimal value =  new BigDecimal("300");
-        int itemsQuantity = 3;
 
-        GenerateOrder generateOrder = new GenerateOrder(customer, value, itemsQuantity);
+        GenerateOrder generateOrder = new GenerateOrder(customer, List.of(item));
         GenerateOrderHandler handler = new GenerateOrderHandler(List.of(new SendEmailOrder(), new SendEmailOrder()));
 
         handler.perform(generateOrder);
+    }
+
+    @Test
+    public void quoteComposite(){
+        Quote oldQuote = new Quote();
+        oldQuote.addItem(new QuoteItem(new BigDecimal("100")));
+        oldQuote.disapprove();
+
+        Quote newQuote = new Quote();
+        newQuote.addItem(new QuoteItem(new BigDecimal("500")));
+        newQuote.addItem(oldQuote);
+
+        System.out.println(newQuote.getValue());
     }
 }

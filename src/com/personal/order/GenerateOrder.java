@@ -1,28 +1,24 @@
 package com.personal.order;
 
-import java.math.BigDecimal;
+import com.personal.quote.Budgetable;
+
+import java.util.List;
 
 public class GenerateOrder {
 
     private String customer;
-    private BigDecimal quoteValue;
-    private int itemsQuantity;
+    private List<Budgetable> item;
 
-    public GenerateOrder(String customer, BigDecimal quoteValue, int itemsQuantity) {
+    public GenerateOrder(String customer, List<Budgetable> item) {
         this.customer = customer;
-        this.quoteValue = quoteValue;
-        this.itemsQuantity = itemsQuantity;
+        this.item = item;
     }
 
     public String getCustomer() {
         return customer;
     }
 
-    public BigDecimal getQuoteValue() {
-        return quoteValue;
-    }
-
-    public int getItemsQuantity() {
-        return itemsQuantity;
+    public List<Budgetable> getItem() {
+        return item;
     }
 }
