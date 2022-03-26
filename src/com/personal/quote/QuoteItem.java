@@ -12,6 +12,6 @@ public class QuoteItem implements Budgetable {
 
     @Override
     public BigDecimal getValue() {
-        return value;
+        return this.value;
     }
 }

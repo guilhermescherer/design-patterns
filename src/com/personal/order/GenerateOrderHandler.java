@@ -18,7 +18,7 @@ public class GenerateOrderHandler {
 
     public void perform(GenerateOrder data) {
         Quote quote = new Quote();
-        quote.addItem(data.getItem());
+        data.getItem().forEach(quote::addItem);
 
         Order order = new Order(data.getCustomer(), LocalDateTime.now(), quote);
 

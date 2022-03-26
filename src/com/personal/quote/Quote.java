@@ -15,6 +15,7 @@ public class Quote implements Budgetable {
     private List<Budgetable> items;
 
     public Quote() {
+        this.value = BigDecimal.ZERO;
         this.items = new ArrayList<>();
         this.situation = new Processing();
     }
