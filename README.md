@@ -1,15 +1,15 @@
 # Design Patterns
 
-Projeto com alguns design patterns para fim didático.
+Project with some design patterns for didactic purpose
 
-#### Comportamentais:
+#### Behavioral:
 * Strategy
 * Chain of Responsibility
 * Template Method
 * State
 * Command
 
-#### Estruturais:
+#### Structural:
 * Adapter
 * Decorator
 * Composite
