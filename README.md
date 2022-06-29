@@ -1,6 +1,6 @@
 # Design Patterns
 
-Project with some design patterns for didactic purpose
+Project with some design patterns for didactic purpose.
 
 #### Behavioral:
 * Strategy
